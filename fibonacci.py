@@ -22,7 +22,8 @@ class SleepyFib:
             raise NotIntegerError
         elif n < 1:
             raise BadNumberError
-        elif n > 101:
+        elif n > 300000:
+            #This is when I notice it skipping a little
             raise ExceedMaxNumberError
         else:
             pass
