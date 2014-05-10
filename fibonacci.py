@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from exception import *
 
 class SleepyFib:
@@ -8,11 +9,16 @@ class SleepyFib:
         return self.calc_fib(n)
 
     def calc_fib(self, n):
-        #Tells us the nth fibonacci number
+        # Tells us the nth fibonacci number
         a,b = 0,1
-        for x in range(0,n):
-            a, b = b, a+b
-        return a
+        if n == 1:
+            return a
+        elif n == 2:
+            return b
+        else:
+            for x in range(-1,n):
+                a, b = b, a+b
+            return a
 
 
     def validate_fib(self,n):
@@ -23,7 +29,6 @@ class SleepyFib:
         elif n < 1:
             raise BadNumberError
         elif n > 300000:
-            #This is when I notice it skipping a little
             raise ExceedMaxNumberError
         else:
             pass

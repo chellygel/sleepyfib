@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 class BadNumberError(Exception):
     pass
 

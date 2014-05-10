@@ -1,5 +1,4 @@
-#Unit Tests to verify the fib function
-
+#!/usr/bin/env python
 import pytest
 from fibonacci import SleepyFib
 from exception import *
@@ -11,8 +10,8 @@ class TestFib:
         assert SleepyFib().fib(1) == 0
 
     def test_fib_two(self):
-        # TODO: Create pre-determined values to randomize through?
-        assert SleepyFib().fib(26) == 75025
+        # Verify set value hasn't changed
+        assert SleepyFib().fib(26) == 196418
         
     def test_fib_negative_number(self):
         # Verify negative numbers aren't allowed
@@ -32,4 +31,4 @@ class TestFib:
     def test_fib_maximum(self):
         # Verify upper boundary is not passed
         with pytest.raises(ExceedMaxNumberError):
-            SleepyFib().fib(31)
+            SleepyFib().fib(300001)
