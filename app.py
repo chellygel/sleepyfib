@@ -8,7 +8,7 @@ limitations = [
     {
         'id' : 1,
         'type' : "Maximum Call Length",
-        'description' : "User should not call a number larger than 300001"
+        'description' : "User should not call a number larger than 8000"
     },
     {
         'id' : 2,

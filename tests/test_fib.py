@@ -7,7 +7,8 @@ class TestFib:
 
     def test_fib_one(self):
         # Verify initial value hasn't changed
-        assert  SleepyFib().fib(1) == 0
+        fib_seq = SleepyFib().fib(1)
+        assert  fib_seq[-1] == 0
 
     def test_fib_two(self):
         # Verify set value hasn't changed
@@ -32,4 +33,4 @@ class TestFib:
     def test_fib_maximum(self):
         # Verify upper boundary is not passed
         with pytest.raises(ExceedMaxNumberError):
-            SleepyFib().fib(300001)
+            SleepyFib().fib(8001)
