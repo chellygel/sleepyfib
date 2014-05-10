@@ -4,5 +4,5 @@ class BadNumberError(Exception):
 class NotIntegerError(Exception):
     pass
 
-class AboveMaxNumberError(Exception):
+class ExceedMaxNumberError(Exception):
     pass

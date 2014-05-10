@@ -31,5 +31,5 @@ class TestFib:
 
     def test_fib_maximum(self):
         # Verify upper boundary is not passed
-        with pytest.raises(AboveMaxNumberError):
+        with pytest.raises(ExceedMaxNumberError):
             SleepyFib().fib(31)

@@ -2,14 +2,18 @@ from exception import *
 
 class SleepyFib:
     def fib(self, n):
-        #Tells us the nth fibonacci number
+        # Verify valid number before submitting
         self.validate_fib(n)
-        if n == 1:
-            return 0
-        elif n == 2:
-            return 1
-        else:
-            return self.fib(n-1) + self.fib(n-2)
+        # Execute fib calculation
+        return self.calc_fib(n)
+
+    def calc_fib(self, n):
+        #Tells us the nth fibonacci number
+        a,b = 0,1
+        for x in range(0,n):
+            a, b = b, a+b
+        return a
+
 
     def validate_fib(self,n):
         #Validates the data before it gets passed into function
@@ -18,7 +22,7 @@ class SleepyFib:
             raise NotIntegerError
         elif n < 1:
             raise BadNumberError
-        elif n > 30:
-            raise AboveMaxNumberError
+        elif n > 101:
+            raise ExceedMaxNumberError
         else:
-            return n
+            pass
