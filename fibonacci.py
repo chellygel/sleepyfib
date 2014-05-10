@@ -11,14 +11,17 @@ class SleepyFib:
     def calc_fib(self, n):
         # Tells us the nth fibonacci number
         a,b = 0,1
+        c=[0]
         if n == 1:
             return a
         elif n == 2:
-            return b
+            c.append(b)
+            return c
         else:
             for x in range(1,n):
                 a, b = b, a+b
-            return a
+                c.append(a)
+            return c
 
 
     def validate_fib(self,n):

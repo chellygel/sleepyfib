@@ -7,11 +7,12 @@ class TestFib:
 
     def test_fib_one(self):
         # Verify initial value hasn't changed
-        assert SleepyFib().fib(1) == 0
+        assert  SleepyFib().fib(1) == 0
 
     def test_fib_two(self):
         # Verify set value hasn't changed
-        assert SleepyFib().fib(40) == 63245986
+        fib_seq = SleepyFib().fib(40)
+        assert  fib_seq[-1] == 63245986
 
     def test_fib_negative_number(self):
         # Verify negative numbers aren't allowed
