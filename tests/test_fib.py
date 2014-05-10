@@ -11,8 +11,8 @@ class TestFib:
 
     def test_fib_two(self):
         # Verify set value hasn't changed
-        assert SleepyFib().fib(26) == 196418
-        
+        assert SleepyFib().fib(40) == 63245986
+
     def test_fib_negative_number(self):
         # Verify negative numbers aren't allowed
         with pytest.raises(BadNumberError):

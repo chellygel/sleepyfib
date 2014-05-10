@@ -16,7 +16,7 @@ class SleepyFib:
         elif n == 2:
             return b
         else:
-            for x in range(-1,n):
+            for x in range(1,n):
                 a, b = b, a+b
             return a
 

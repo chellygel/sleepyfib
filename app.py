@@ -15,6 +15,11 @@ def call_fib(num):
     number = SleepyFib().fib(int(num))
     return jsonify( { 'The fib number is': number})
 
+@app.route('/sleepfib/fib/limits', methods = ['GET'])
+def limits():
+    # Explain details of limitations
+    pass
+
 
 if __name__ == '__main__':
     app.run(debug = True)
