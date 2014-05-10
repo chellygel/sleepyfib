@@ -10,9 +10,9 @@ def index():
     return "Welcome to the SleepyFib API!"
 
 
-@app.route('/sleepyfib/fib', methods = ['GET'])
-def call_fib():
-    number = SleepyFib().fib(3)
+@app.route('/sleepyfib/fib/<num>', methods = ['GET'])
+def call_fib(num):
+    number = SleepyFib().fib(int(num))
     return jsonify( { 'The fib number is': number})
 
 
