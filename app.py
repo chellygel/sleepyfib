@@ -13,7 +13,7 @@ limitations = [
     {
         'id': 2,
         'type': "Positive Integers Only",
-        'description': "User should only use positive whole numbers"
+        'description': "User should only use positive integers only"
     }
 ]
 
@@ -42,4 +42,4 @@ def get_fib(n):
         return jsonify({'Error!': response})
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug = False)
