@@ -117,5 +117,48 @@ $ curl "http://localhost:5000/sleepyfib/api/limits"
 }
 </pre>
 
+## Executing Unit Tests
+
+SleepyFib uses the wonderful pytest. To learn more about pytest read their documentation on their [main page](http://pytest.org/latest/).
+
+Make sure that your SleepyFib repo is in your PYTHONPATH! This is handled in your virtualenv activate file.
+<pre> export PYTHONPATH="/path/to/sleepyfib" </pre>
+
+If you have modified it, make sure you re-activate your virtualenv to have the change!
+
+To execute the pytests you simply execute:
+<pre>$ py.test
+(aboo)chelsea@zephyrus:~/testfib$ py.test
+============================================================ test session starts ============================================================
+platform linux2 -- Python 2.7.3 -- py-1.4.20 -- pytest-2.5.2
+collected 6 items 
+
+tests/test_fib.py ......
+
+========================================================= 6 passed in 0.09 seconds =========================================================
+</pre>
+
+or for a more verbose output:
+
+<pre>
+$ py.test --verbose
+============================================================ test session starts ============================================================
+platform linux2 -- Python 2.7.3 -- py-1.4.20 -- pytest-2.5.2 -- /home/chelsea/aboo/bin/python
+collected 6 items 
+
+tests/test_fib.py:12: TestFib.test_fib_one PASSED
+tests/test_fib.py:17: TestFib.test_fib_two PASSED
+tests/test_fib.py:30: TestAPI.test_fib_negative PASSED
+tests/test_fib.py:37: TestAPI.test_fib_decimals PASSED
+tests/test_fib.py:44: TestAPI.test_fib_string PASSED
+tests/test_fib.py:51: TestAPI.test_fib_maximum PASSED
+
+========================================================= 6 passed in 0.10 seconds =========================================================
+</pre>
+
+
+
+
+
 
 
