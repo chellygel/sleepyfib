@@ -22,12 +22,12 @@ limitations = [
 def index():
     return "Welcome to the SleepyFib API!"
 
-@app.route('/sleepyfib/api/limits', methods = ['GET'])
+@app.route('/sleepyfib/api/limits', methods=['GET'])
 def get_limits():
     # Explain details of limitations
     return jsonify({'Limiations': limitations})
 
-@app.route('/sleepyfib/api/fib/<n>', methods = ['GET'])
+@app.route('/sleepyfib/api/fib/<n>', methods=['GET'])
 def get_fib(n):
     try:
         n = int(n)
