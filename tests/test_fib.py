@@ -1,36 +1,46 @@
 #!/usr/bin/env python
 import pytest
+import requests
 from fibonacci import SleepyFib
-from exception import *
+
 
 class TestFib:
 
     def test_fib_one(self):
         # Verify initial value hasn't changed
-        fib_seq = SleepyFib().fib(1)
-        assert  fib_seq[-1] == 0
+        result = SleepyFib().fib(1)
+        assert  result[-1] == 0
 
     def test_fib_two(self):
         # Verify set value hasn't changed
-        fib_seq = SleepyFib().fib(40)
-        assert  fib_seq[-1] == 63245986
+        result = SleepyFib().fib(40)
+        assert  result[-1] == 63245986
 
     def test_fib_negative_number(self):
         # Verify negative numbers aren't allowed
-        with pytest.raises(BadNumberError):
-            SleepyFib().fib(-1)
+        result = requests.get("http://localhost:5000/sleepyfib/api/fib/-5")
+        message = SleepyFib().errors["NotIntegerError"]
+        expected_response = {"Error!": message}
+        assert result.json() == expected_response
 
     def test_fib_decimals(self):
         # Verify decimals aren't allowed
-        with pytest.raises(NotIntegerError):
-            SleepyFib().fib(2.5)
+        result = requests.get("http://localhost:5000/sleepyfib/api/fib/2.5")
+        message = SleepyFib().errors["NotIntegerError"]
+        expected_response = {"Error!": message}
+        assert result.json() == expected_response
 
     def test_fib_string(self):
         # Verify strings aren't allowed
-        with pytest.raises(NotIntegerError):
-            SleepyFib().fib("a string")
+        result = requests.get("http://localhost:5000/sleepyfib/api/fib/string")
+        message = SleepyFib().errors["NotIntegerError"]
+        expected_response = {"Error!": message}
+        assert result.json() == expected_response
+    
 
     def test_fib_maximum(self):
         # Verify upper boundary is not passed
-        with pytest.raises(ExceedMaxNumberError):
-            SleepyFib().fib(8001)
+        result = requests.get("http://localhost:5000/sleepyfib/api/fib/9001")
+        message = SleepyFib().errors["Over9000Error"]
+        expected_response = {"Error!": message}
+        assert result.json() == expected_response
