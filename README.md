@@ -39,23 +39,23 @@ This set up is a casual step by step guide to getting SleepyFib up and running. 
 ###Pre-Install
 
 1. Create a new virtual environment for sleepyfib
-<pre>$virtualenv sleepyfib</pre>
+<pre>$ virtualenv sleepyfib</pre>
 2. Source the virtual environment so that it is running
-<pre>source sleepyfib/bin/activate</pre>
+<pre>$ source sleepyfib/bin/activate</pre>
 
 For more information visit the [virtualenv docs](http://virtualenv.readthedocs.org/en/latest/). Or checkout the [python guide](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 ###Installation steps
 1. Clone the repository to desired location
-<pre>git clone https://github.com/chelseawinfree/sleepyfib.git</pre>
+<pre>$ git clone https://github.com/chelseawinfree/sleepyfib.git</pre>
 
 2. Navigate to directory where you cloned SleepyFib
 
 3. Install necessary packages
-<pre>pip install -r requirements.txt</pre>
+<pre>$ pip install -r requirements.txt</pre>
 
 4. Set file permissions to all and execute
-<pre>chmod a+x app.py
+<pre>$ chmod a+x app.py
 
 ## Starting up the App
 
