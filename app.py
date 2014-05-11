@@ -8,7 +8,7 @@ limitations = [
     {
         'id' : 1,
         'type' : "Maximum Call Length",
-        'description' : "User should not call a number larger than 8000"
+        'description' : "User should not call a number larger than 9000"
     },
     {
         'id' : 2,
@@ -22,17 +22,24 @@ limitations = [
 def index():
     return "Welcome to the SleepyFib API!"
 
-@app.route('/limits', methods = ['GET'])
+@app.route('/sleepyfib/api/limits', methods = ['GET'])
 def get_limits():
     # Explain details of limitations
     return jsonify( {'Limiations' : limitations} )
 
-@app.route('/sleepyfib/fib/<n>', methods = ['GET'])
+@app.route('/sleepyfib/api/fib/<n>', methods = ['GET'])
 def get_fib(n):
-    number = SleepyFib().fib(int(n))
-    return jsonify( { 'The Fibonacci Sequence is': number} )
+    try:
+        n = int(n)
+    except ValueError:
+        return jsonify({"Error!":"Only positive integers, please"})
 
-
+    response = SleepyFib().validate_fib(n)
+    if response is True:
+        number = SleepyFib().fib(int(n))
+        return jsonify( { 'The Fibonacci Sequence is': number} )
+    else:
+        return jsonify({'Error!' : response})
 
 if __name__ == '__main__':
     app.run(debug = True)

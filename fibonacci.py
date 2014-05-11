@@ -3,9 +3,6 @@ from exception import *
 
 class SleepyFib:
     def fib(self, n):
-        # Verify valid number before submitting
-        self.validate_fib(n)
-        # Execute fib calculation
         return list(self.calc_fib(n))
 
     def calc_fib(self, n):
@@ -15,13 +12,18 @@ class SleepyFib:
             a, b = b, a + b
 
     def validate_fib(self,n):
-        #Validates the data before it gets passed into function
+        errors = {
+        "NotIntegerError" : "Only positive integers, please.",
+        "Over9000" : "Your value is over 9000, please try again."
+        }
 
+        #Validates the data before it gets passed into function
         if isinstance(n, int) == False:
-            raise NotIntegerError
+            response = errors["NotIntegerError"]
         elif n < 1:
-            raise BadNumberError
-        elif n > 8000:
-            raise ExceedMaxNumberError
+            response = errors["NotIntegerError"]
+        elif n > 9000:
+            response = errors["Over9000"]
         else:
-            pass
+            response = True
+        return response
