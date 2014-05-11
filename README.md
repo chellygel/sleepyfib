@@ -128,7 +128,6 @@ If you have modified it, make sure you re-activate your virtualenv to have the c
 
 To execute the pytests you simply execute:
 <pre>$ py.test
-(aboo)chelsea@zephyrus:~/testfib$ py.test
 ============================================================ test session starts ============================================================
 platform linux2 -- Python 2.7.3 -- py-1.4.20 -- pytest-2.5.2
 collected 6 items 
