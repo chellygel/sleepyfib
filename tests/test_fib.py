@@ -9,12 +9,12 @@ class TestFib:
     def test_fib_one(self):
         # Verify initial value hasn't changed
         result = SleepyFib().fib(1)
-        assert  result[-1] == 0
+        assert result[-1] == 0
 
     def test_fib_two(self):
         # Verify set value hasn't changed
         result = SleepyFib().fib(40)
-        assert  result[-1] == 63245986
+        assert result[-1] == 63245986
 
     def test_fib_negative_number(self):
         # Verify negative numbers aren't allowed
@@ -36,7 +36,6 @@ class TestFib:
         message = SleepyFib().errors["NotIntegerError"]
         expected_response = {"Error!": message}
         assert result.json() == expected_response
-    
 
     def test_fib_maximum(self):
         # Verify upper boundary is not passed

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 class SleepyFib:
     errors = {
-        "NotIntegerError" : "Only positive integers, please",
-        "Over9000Error" : "Your value is over 9000, please try again"
+        "NotIntegerError": "Only positive integers, please",
+        "Over9000Error": "Your value is over 9000, please try again"
         }
 
     def fib(self, n):
@@ -14,9 +14,9 @@ class SleepyFib:
             yield a
             a, b = b, a + b
 
-    def validate_fib(self,n):
-        #Validates the data before it gets passed into function
-        if isinstance(n, int) == False:
+    def validate_fib(self, n):
+        # Validates the data before it gets passed into function
+        if isinstance(n, int) is False:
             response = self.errors["NotIntegerError"]
         elif n < 1:
             response = self.errors["NotIntegerError"]
